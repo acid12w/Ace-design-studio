@@ -1,0 +1,172 @@
+* {
+  cursor: none;
+}
+
+.clip {
+    clip-path: inset(34% 16% 29% 17%);
+    transition: all;
+    /* transition-duration: 2s !important; */
+} 
+
+.block-box {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.transition-block-box {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+}
+
+#hero-img {
+    transform: scale(1.2);
+    will-change: transform;
+}
+
+.line, .word , .cta-label, .nav-ul {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.img-transition {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+.img-transition-1 {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+}
+
+
+
+.line h1, .line h2, .line p, .word p, .cta-label button, .nav-ul, .word img, nav {
+    position: relative;
+    transform: translateY(-180px);
+    will-change: transform;
+}
+
+.cta-label button {
+    transform: scale(0);
+}
+
+.bg-hero {
+    background-image: radial-gradient(#146d72 5%, transparent 0);
+    background-size: 35px 35px;
+}
+
+
+.cursor {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #c8fc01;
+  transition: all 10ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate(calc(-50% + 15px), -50%);;
+  will-change: transform;
+  z-index: 999;
+  /* mix-blend-mode: overlay; */
+}
+
+
+.mouse {
+    position: fixed; /* Essential for positioning relative to the viewport */
+    pointer-events: none; /* Allows clicks to pass through the follower */
+    transform: translate(-50%, -50%);
+}
+
+.cursor-text {
+    width: 60px;
+    height: 60px;
+    color: inherit;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+
+    transition: all;
+    will-change: transform;
+  }
+
+  html, body, a, [role=button], button, [type=button]:not(:disabled){
+  cursor: none;
+}
+#jelly-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background-color: #c8fc01;
+  border-radius: 50%;
+  transform-origin: 50% 50%;
+  transform: translate(-50%, -50%);
+  will-change: width, height, transform, border;
+  z-index: 99999;
+  pointer-events: none;
+  font-size: 7px;
+  color: #0b3a3c;
+  display: flex;
+  align-items: center; /* Vertically centers items within the flex container */
+  justify-content: center; /* Horizontally centers items within the flex container */
+}
+
+/* .jelly-cursor-w {
+    transition: all 100ms;
+    width: 100px !important;
+    height: 100px !important;
+} */
+
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%) scale(0.7);
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%,0 100%);
+    transition: all;
+    will-change: transform;
+    z-index: 60;
+}
+
+.overlay {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0, 0 0);
+    transition: all;
+    will-change: transform;
+    background-color: #0b3a3c;
+    z-index: 2;
+}
+
+.object-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.object {
+    position: absolute;
+    width: max-content;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: #fff;
+    color: #0b3a3c;
+    padding: 1em 2em;
+    border-radius: 10em;
+    cursor: grab;
+    user-select: none;
+    pointer-events: auto;
+    z-index: 30;
+}
+
+.object:active {
+    cursor: grabbing;
+}
