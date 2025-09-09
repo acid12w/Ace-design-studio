@@ -97,7 +97,7 @@
   html, body, a, [role=button], button, [type=button]:not(:disabled){
   cursor: none;
 }
-#jelly-cursor {
+.jelly-cursor {
   position: fixed;
   top: 0;
   left: 0;
