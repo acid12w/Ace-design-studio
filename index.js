@@ -769,7 +769,7 @@ gsap.to(split1.words, {
 		start: 'top 80%', // when the top of the trigger hits the top of the viewport
   },
   y: 0,
-  duration: 1.5,
+  duration: 1,
   stagger: 0.1,
   ease: "power4.in"
 });
@@ -784,7 +784,7 @@ projects.forEach(project => {
       start: 'top 80%', // when the top of the trigger hits the top of the viewport
     },
     y: 0,
-    duration: 2,
+    duration: 1,
     opacity: 1,
     ease: "power4.inOut"
   });
