@@ -12,7 +12,7 @@ gsap.ticker.add((time)=>{
 
 gsap.ticker.lagSmoothing(0)
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 
 
@@ -160,7 +160,6 @@ let yTo = gsap.quickTo("#icon", "y", { ease: "power3" });
 
 function onMove(e) {
   let boundingRect = hoverArea.getBoundingClientRect();
-  console.log(boundingRect)
   let relX = e.pageX - boundingRect.left;
   let relY = e.pageY - boundingRect.top;
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop; 
@@ -419,6 +418,7 @@ if (!isTouchDevice) {
   animate();
 }
 
+//HERO ANIMATION
 
 document.addEventListener("DOMContentLoaded", () => { 
 
@@ -445,7 +445,7 @@ CustomEase.create('hop', "M0,0 C0.29,0 0.348,0.05 0.422,0.134 0.494,0.217 0.484,
   
   gsap.to(".overlay", {  clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)", duration: 2, delay: 0.5, ease: "hop"}); 
 
-  gsap.to([".nav-ul", ".line h1", ".word p", ".cta-label button", ".word img"], {
+  gsap.to([".nav-ul", ".line h1",".line p", ".word p", ".cta-label button", ".word img"], {
             y: '0%',
             duration: 2,
             delay: 0.6,
@@ -465,9 +465,10 @@ CustomEase.create('hop', "M0,0 C0.29,0 0.348,0.05 0.422,0.134 0.494,0.217 0.484,
 })
 
 
+// BUTTON DROP DOWN WITH PHYSICS
+
 document.addEventListener("DOMContentLoaded", () => {
   const animateOnScroll = true;
-   console.log("fire")
 
   const config ={
     gravity: {x: 0, y: 1},
@@ -698,6 +699,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+  // CARD STAGGER SLIDEUP
+
   const cards = document.querySelectorAll('.slideup-card');
   const smoothStep = (p) => p * p * (3 - 2 * p);
 
@@ -732,3 +735,58 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     },
   });
+
+
+  //Fade in text
+
+let split = SplitText.create(".text", {
+  type: "words",
+  mask: "words",
+  wordsClass: "word",
+});
+
+gsap.to(split.words, {
+  scrollTrigger: {
+		trigger: '#container',
+		start: 'top 80%', // when the top of the trigger hits the top of the viewport
+  },
+  y: 0,
+  duration: 1,
+  stagger: 0.1,
+  ease: "power4.out"
+});
+
+
+let split1 = SplitText.create(".text-1", {
+  type: "words",
+  mask: "words",
+  wordsClass: "word",
+});
+
+gsap.to(split1.words, {
+  scrollTrigger: {
+		trigger: '#work',
+		start: 'top 95%', // when the top of the trigger hits the top of the viewport
+  },
+  y: 0,
+  duration: 1.5,
+  stagger: 0.1,
+  ease: "power4.in"
+});
+
+
+const projects = document.querySelectorAll(".project");
+
+projects.forEach(project => {
+    gsap.to(project, {
+    scrollTrigger: {
+      trigger: project,
+      start: 'top 80%', // when the top of the trigger hits the top of the viewport
+    },
+    y: 0,
+    duration: 2,
+    opacity: 1,
+    ease: "power4.inOut"
+  });
+})
+

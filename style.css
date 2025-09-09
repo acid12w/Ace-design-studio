@@ -37,7 +37,12 @@
 
 .line h1, .line h2, .line p, .word p, .cta-label button, .nav-ul, .word img, nav {
     position: relative;
-    transform: translateY(-180px);
+    transform: translateY(-210px);
+    will-change: transform;
+}
+
+ h2 .word {
+    transform: translateY(100px);
     will-change: transform;
 }
 
