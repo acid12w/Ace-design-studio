@@ -766,7 +766,7 @@ let split1 = SplitText.create(".text-1", {
 gsap.to(split1.words, {
   scrollTrigger: {
 		trigger: '#work',
-		start: 'top 95%', // when the top of the trigger hits the top of the viewport
+		start: 'top 80%', // when the top of the trigger hits the top of the viewport
   },
   y: 0,
   duration: 1.5,
