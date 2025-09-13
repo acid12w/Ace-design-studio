@@ -12,7 +12,7 @@ gsap.ticker.add((time)=>{
 
 gsap.ticker.lagSmoothing(0)
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, ScrollToPlugin);
 
 
 
@@ -83,44 +83,17 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 // });
 
 
-// document.querySelector("#menu").addEventListener("click", e => {
-//     const click = "#" + e.target.innerText.toLowerCase();
-//     if(!click) return;
-//     console.log( click)
-//     gsap.to(window, {scrollTo:click, duration:.5});
-// })
+console.log(document.querySelector("#menu"))
+
+document.querySelector("#menu").addEventListener("click", e => {
+    const click = "#" + e.target.innerText.toLowerCase();
+    console.log(click)
+    if(!click) return;
+    
+    gsap.to(window, {scrollTo:click, duration:.5});
+})
 
 
-// const mobileNav = document.querySelector('#mobile-nav');
-// const navbarDropdown = document.querySelector('#navbar-dropdown');
-// let isActive = false;
-
-// mobileNav.addEventListener('click', function(e){
-
-//     console.log(isActive)
-
-//     if(isActive){
-//         open()
-//     }else{
-//         close()
-//     }
-
-//     function open(){
-//         gsap.to(navbarDropdown, {
-//             x: 750,
-//             ease: "power4.inOut",
-//         })  
-//         isActive = false;
-//     }
-
-//     function close(){
-//         gsap.to(navbarDropdown, {
-//             x: 0,
-//             ease: "power4.inOut",
-//         })  
-//         isActive = true;
-//     }
-// });
 
 
 // let proxy = { skew: 0 },
@@ -462,6 +435,9 @@ CustomEase.create('hop', "M0,0 C0.29,0 0.348,0.05 0.422,0.134 0.494,0.217 0.484,
       stagger: 0.1,
       ease: "power4.inOut",
   })
+
+    gsap.to(".hero", {  display: "none"}); 
+
 })
 
 
@@ -789,4 +765,27 @@ projects.forEach(project => {
     ease: "power4.inOut"
   });
 })
+
+
+const menuIndicator = function(){
+ const list = document.querySelectorAll(".list");
+ const indicator = document.querySelector(".indicator");
+
+ list.forEach((li, index) => {
+  const a = li.querySelector('a');
+  console.log(a);
+  li.addEventListener("click", function(){
+    indicator.style.transform = `translateX(${index * 69}px)`;
+    list.forEach(li => {
+      const listAnchor = li.querySelector('a');
+      if(listAnchor !== a) {
+        listAnchor.style.color = "#024144"
+      }
+    })
+    a.style.color = '#67e571';
+  })
+ })
+}
+
+menuIndicator();
 

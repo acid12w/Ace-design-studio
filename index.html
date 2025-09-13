@@ -56,17 +56,17 @@
           </div>
          
         
-          <div class="text-white w-auto h-10 md:block p-0 border-0 " id="navbar-dropdown">
+          <div  class="text-white w-auto h-10 md:block p-0 border-0 " id="navbar-dropdown">
           
-            <ul  class="flex gap-y-1 rounded-full text-gray-100 bg-[#67E571] p-1 nav-links">
-              <li class="rounded-full bg-[#0B3A3C] text-[#67E571] p-2">
+            <ul id="menu"  class="flex relative gap-x-3 rounded-full text-gray-100 bg-[#67E571] p-1 nav-links">
+              <li class=" list p-2 z-20">
                 <span class="rounded-full bg-red-500 h-6 w-2 inline md:hidden"></span>
-                <a class="cursor-pointer rounded" aria-current="page">Home</a>
+                <a class="cursor-pointer rounded transition-color duration-[1s] text-[#67e571]" aria-current="page">Home</a>
               </li>
-              <li id="button" class="rounded-md p-2 text-[#0B3A3C]">
-                <a class="cursor-pointerrounded" aria-current="page">Work</a>
+              <li id="button" class="list z-20 rounded-md p-2 ">
+                <a class="cursor-pointer rounded text-[#024144] transition-color duration-[1s]" aria-current="page">Work</a>
               </li>     
-              
+              <span class="indicator z-10 rounded-full bg-[#0B3A3C] transition-transform duration-[1s] py-5 px-8 absolute"></span>
             </ul>
           </div>
         </div>
@@ -136,7 +136,7 @@
               <img class="w-64" src="./images/design-arrow.png"/>
             </div>
             <div class="flex gap-8 justify-center mb-8">
-              <button class="text-xs md:text-base bg-gray-100 px-2 py-2 rounded-full bg-[url(./images/andras-vas.jpg)] text-white bg-cover">Start a project</button>
+              <button id="physics-btn" class="text-xs md:text-base bg-gray-100 px-2 py-2 rounded-full bg-[url(./images/andras-vas.jpg)] text-white bg-cover">Start a project</button>
               <h2 class="text-4xl md:text-6xl text-white ">to <span class="text-[#C8FC01]">develop </span></h2> 
             </div>
              <div class="flex gap-8 justify-center">
