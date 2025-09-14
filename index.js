@@ -83,15 +83,98 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, ScrollToPlugin);
 // });
 
 
-console.log(document.querySelector("#menu"))
-
 document.querySelector("#menu").addEventListener("click", e => {
     const click = "#" + e.target.innerText.toLowerCase();
-    console.log(click)
     if(!click) return;
     
     gsap.to(window, {scrollTo:click, duration:.5});
-})
+});
+
+const sections = document.querySelectorAll(".section");
+
+const navMenuAnimation = function(currentSection){
+   
+}
+
+ sections.forEach((section, index) => {
+    gsap.to(section, {
+      scrollTrigger: {
+        trigger: section, 
+        start: 'top 50%',
+        onEnter: (self) => {
+          const currentSection = self.vars.trigger.id;              
+
+          if(section.id === currentSection){
+            const indicator = document.querySelector(".indicator");
+            indicator.style.transform = `translateX(${index * 69}px)`;
+            const list = document.querySelectorAll(".list");
+
+            list.forEach(li => {
+              const listAnchor = li.querySelector('a').dataset.section.toLowerCase();
+               li.querySelector('a').style.color ='#67e571';
+               
+              if(listAnchor !== currentSection) {
+                console.log(listAnchor, currentSection);
+                li.querySelector('a').style.color =  '#024144';
+              }           
+            })
+          }
+        },
+        onEnterBack: (self) => {
+          
+          const currentSection = self.vars.trigger.id.toLowerCase();              
+
+          if(section.id === currentSection){
+              const indicator = document.querySelector(".indicator");
+              indicator.style.transform = `translateX(${index * 69}px)`;
+              const list = document.querySelectorAll(".list");
+
+              list.forEach(li => {
+              const listAnchor = li.querySelector('a').dataset.section.toLowerCase();
+               li.querySelector('a').style.color ='#67e571';
+               
+              if(listAnchor !== currentSection) {
+                console.log(listAnchor, currentSection);
+                li.querySelector('a').style.color =  '#024144';
+              }           
+            })
+          }
+        },
+      }
+    })
+ })
+
+
+
+// ScrollTrigger.create({
+// 	trigger: '#work',
+// 	start: 'top top',
+// 	endTrigger: '#otherID',
+//   onEnter: (self) => {
+//       const currentSection = self.vars.trigger
+//       const sections = document.querySelectorAll("section");
+//       const indicator = document.querySelector(".indicator");
+
+//       sections.forEach((section, index) => {
+//           if(section.id, currentSection.replace("#", "")){
+//               console.log(section)
+//               indicator.style.transform = `translateX(${index * 17}px)`;
+              
+//           }
+//           // list.forEach(li => {
+//           //   const listAnchor = li.querySelector('a');
+//           //   if(listAnchor !== a) {
+//           //     listAnchor.style.color = "#024144"
+//           //   }
+//           // })
+//           // a.style.color = '#67e571';
+        
+//       })
+
+//   },	
+// });
+
+
 
 
 
@@ -436,7 +519,7 @@ CustomEase.create('hop', "M0,0 C0.29,0 0.348,0.05 0.422,0.134 0.494,0.217 0.484,
       ease: "power4.inOut",
   })
 
-    gsap.to(".hero", {  display: "none"}); 
+    gsap.to(".hero", { delay: 1.5, display: "none"}); 
 
 })
 
@@ -773,7 +856,6 @@ const menuIndicator = function(){
 
  list.forEach((li, index) => {
   const a = li.querySelector('a');
-  console.log(a);
   li.addEventListener("click", function(){
     indicator.style.transform = `translateX(${index * 69}px)`;
     list.forEach(li => {

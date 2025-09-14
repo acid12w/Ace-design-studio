@@ -133,7 +133,7 @@
     clip-path: polygon(0% 100%, 100% 100%, 100% 100%,0 100%);
     transition: all;
     will-change: transform;
-    z-index: 60;
+    z-index: 90;
 }
 
 .overlay {
@@ -146,7 +146,7 @@
     transition: all;
     will-change: transform;
     background-color: #0b3a3c;
-    z-index: 2;
+    z-index: 20;
 }
 
 .object-container {

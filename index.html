@@ -32,7 +32,7 @@
   </script>
 
 <body class="bg-[#024144] ">
-  <div id="jelly-cursor" class="jelly-cursor hidden md:flex"></div>
+  <div id="jelly-cursor" class="jelly-cursor "></div>
 
     <!-- <div class="z-30 fixed top-0 left-0 w-screen h-screen overflow-hidden pointer-events-none">
         <div class="overlay flex w-full h-full top-0 absolute">
@@ -51,20 +51,17 @@
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div id="hover-area" class="p-4">
             <a id="icon" class="flex items-center transition-all duration-100 ">
-                <img  src="./images/ace-logo.png" class="h-6" alt="Flowbite Logo" /> 
+                <img src="./images/ace-logo.png" class="h-6" alt="Flowbite Logo" /> 
             </a>
           </div>
-         
         
-         
-          
             <ul id="menu"  class="flex relative w-[8.8em] gap-x-3 rounded-full text-gray-100 bg-[#67E571] p-1 nav-links">
               <li class=" list p-2 z-20">
                 <span class="rounded-full bg-red-500 h-6 w-2 inline md:hidden"></span>
-                <a class="cursor-pointer rounded transition-color duration-[1s] text-[#67e571]" aria-current="page">Home</a>
+                <a class="cursor-pointer rounded transition-color duration-[1s] text-[#67e571]" data-section="Home" aria-current="page">Home</a>
               </li>
               <li id="button" class="list z-20 rounded-md p-2 ">
-                <a class="cursor-pointer rounded text-[#024144] transition-color duration-[1s]" aria-current="page">Work</a>
+                <a class="cursor-pointer rounded text-[#024144] transition-color duration-[1s]" data-section="Work" aria-current="page">Work</a>
               </li>     
               <span class="indicator z-10 rounded-full bg-[#0B3A3C] transition-transform duration-[1s] py-5 px-8 absolute"></span>
             </ul>
@@ -88,8 +85,8 @@
                     <!-- <img src="./images/right-bolt.svg" class="w-28"/> -->
                 </div>
 
-                 <div class="word cta-label md:absolute top-44 left-[32em]">
-                    <img class="justify-self-start ml-20 md:ml-0" src="./images/right-arrow.png" class="w-28"/>
+                 <div class="word flex flex-col items-center justify-center cta-label md:absolute top-44 left-[32em]">
+                    <img class="justify-self-start" src="./images/right-arrow.png" class="w-28"/> 
                     <p class="text-[#C8FC01] text-lg w-max mb-2">Lets discuss your project</p>
                     <button class=" bg-gray-100 px-4 py-2 rounded">Start a project</button>
                 </div>
@@ -98,7 +95,7 @@
         
         </section>
 
-          <section id="container" class="section cards px-6 py-16 bg-[#0B3A3C] h-full md:h-screen ">
+          <section id="container" class=" cards px-6 py-16 bg-[#0B3A3C] h-full md:h-screen ">
             <!-- <div class="bg-red-500 w-full h-full z-40 absolute"></div> -->
             <div class="text-center mb-16">
                 <h2 class="text-white text-3xl mb-4 text">How we can help <strong class="text-[#C8FC01]">you</strong></h2>
