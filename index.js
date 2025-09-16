@@ -828,10 +828,40 @@ gsap.to(split1.words, {
 		start: 'top 80%', // when the top of the trigger hits the top of the viewport
   },
   y: 0,
-  duration: 1,
+  duration: 1.5,
   stagger: 0.1,
-  ease: "power4.in"
+  ease: "power4.out"
 });
+
+
+let split2 = SplitText.create(".text-2", {
+  type: "words",
+  mask: "words",
+  wordsClass: "word",
+});
+
+gsap.to(split2.words, {
+  scrollTrigger: {
+		trigger: '#physics-section',
+		start: 'top 80%', // when the top of the trigger hits the top of the viewport
+  },
+  y: 0,
+  duration: 1.5,
+  stagger: 0.1,
+  ease: "power4.out"
+});
+
+
+gsap.to("#physics-btn", {
+  scrollTrigger: {
+		trigger: '#physics-section',
+		start: 'top 80%', // when the top of the trigger hits the top of the viewport
+  },
+  duration: 1,
+  scale: 1,
+});
+
+
 
 
 const projects = document.querySelectorAll(".project");
@@ -843,9 +873,9 @@ projects.forEach(project => {
       start: 'top 80%', // when the top of the trigger hits the top of the viewport
     },
     y: 0,
-    duration: 1,
+    duration: 1.5,
     opacity: 1,
-    ease: "power4.inOut"
+    ease: "power4.out"
   });
 })
 
